@@ -6,7 +6,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import DashboardCustomizeRoundedIcon from "@mui/icons-material/DashboardCustomizeRounded";
+import { usePathname } from "next/navigation";
 import { sidebarData } from "../utils/sidebarData";
 import { useDarkMode } from "../context/Darkmode";
 import { theme } from "../utils/theme";
@@ -24,7 +24,8 @@ type props = {
 
 const Sidebar = ({ open, handleDrawerOpen, isSmallScreen }: props) => {
   const { darkMode } = useDarkMode();
-
+  const pathname = usePathname();
+  const isActive = (path: string) => path === pathname;
   return (
     <Drawer
       sx={{
@@ -68,7 +69,15 @@ const Sidebar = ({ open, handleDrawerOpen, isSmallScreen }: props) => {
         {sidebarData.map((x, index) => (
           <Link href={x.path} key={index}>
             <ListItem key={index} disablePadding>
-              <ListItemButton>
+              <ListItemButton
+                sx={{
+                  backgroundColor: isActive(x.path)
+                    ? darkMode
+                      ? "#0f172a"
+                      : "rgb(229 231 235)"
+                    : "inherit",
+                }}
+              >
                 <ListItemIcon
                   sx={{
                     minWidth: "30px",

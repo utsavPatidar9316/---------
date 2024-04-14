@@ -3,18 +3,13 @@ import { styled } from "@mui/material/styles";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import FormatAlignLeftIcon from "@mui/icons-material/FormatAlignLeft";
-import SearchIcon from "@mui/icons-material/Search";
-import InputBase from "@mui/material/InputBase";
 import LightModeIcon from "@mui/icons-material/LightMode";
-import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import Badge from "@mui/material/Badge";
 import Avatar from "@mui/material/Avatar";
 import { useDarkMode } from "../context/Darkmode";
 import { theme } from "../utils/theme";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
-import Popover from "@mui/material/Popover";
-import Image from "next/image";
+import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 const drawerWidth = 260;
 interface AppBarProps extends MuiAppBarProps {
   open?: boolean;
@@ -41,37 +36,6 @@ const CustomAppBar = styled(MuiAppBar, {
       duration: theme.transitions.duration.enteringScreen,
     }),
   }),
-}));
-
-const Search = styled("div")(({ theme }) => ({
-  position: "relative",
-  border: "2px solid #94a3b8",
-  borderRadius: "5px",
-  marginLeft: 0,
-  width: "100%",
-  [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(1),
-    width: "auto",
-  },
-}));
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: "inherit",
-  width: "100%",
-  "& .MuiInputBase-input": {
-    padding: theme.spacing(1, 1, 1, 0),
-    paddingLeft: `calc(1em + ${theme.spacing()})`,
-  },
-}));
-
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  right: 0,
 }));
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -105,18 +69,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 const Navbar = ({ open, handleDrawerOpen, isSmallScreen }: props) => {
   const { darkMode, toggleDarkMode } = useDarkMode();
-  const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handleClick = (event: any) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  const openPop = Boolean(anchorEl);
-  const id = open ? "simple-popover" : undefined;
   return (
     <CustomAppBar
       position="fixed"
@@ -140,19 +93,10 @@ const Navbar = ({ open, handleDrawerOpen, isSmallScreen }: props) => {
               aria-label="open drawer"
               onClick={handleDrawerOpen}
               edge="start"
-              sx={{ mr: 2 }}
+              sx={{ ml: 1 }}
             >
-              <FormatAlignLeftIcon />
+              <MenuRoundedIcon />
             </IconButton>
-            <Search>
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <StyledInputBase
-                placeholder="Search"
-                inputProps={{ "aria-label": "search" }}
-              />
-            </Search>
           </div>
         )}
         <div
@@ -169,15 +113,12 @@ const Navbar = ({ open, handleDrawerOpen, isSmallScreen }: props) => {
           ) : (
             <LightModeIcon onClick={toggleDarkMode} />
           )}
-          <NotificationsNoneIcon />
           <StyledBadge
             overlap="circular"
             anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
             variant="dot"
           >
-            <span onClick={handleClick}>
-              <Avatar alt="Jay shree ram" src="/images/hanuman.png" />
-            </span>
+            <Avatar alt="Jay shree ram" src="/images/hanuman.png" />
           </StyledBadge>
         </div>
       </Toolbar>

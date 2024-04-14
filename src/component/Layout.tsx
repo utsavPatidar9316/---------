@@ -7,6 +7,7 @@ import Sidebar from "@/component/Sidebar";
 import Navbar from "@/component/Navbar";
 import { DarkModeProvider, useDarkMode } from "@/context/Darkmode";
 import { theme } from "@/utils/theme";
+import BottomLayout from "./BottomLayout";
 
 const drawerWidth = 260;
 
@@ -102,6 +103,7 @@ export default function PersistentDrawerLeft({
       <Main open={open} sx={{ minHeight: "100vh" }}>
         <DrawerHeader />
         {children}
+        <BottomLayout />
       </Main>
     </Box>
   );
