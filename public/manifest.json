@@ -10,7 +10,7 @@
   "icons": [
     {
       "src": "images/kesrinandan.png",
-      "sizes": "500x500",
+      "sizes": "320x320",
       "type": "image/png",
       "purpose": "maskable any"
     }
