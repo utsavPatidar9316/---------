@@ -1,8 +1,8 @@
 {
   "name": "કેસરીનંદન ધૂનમંડળ",
   "short_name": "કેસરીનંદન",
-  "theme_color": "#2196f3",
-  "background_color": "#fff",
+  "theme_color": "#fff",
+  "background_color": "#000000",
   "display": "standalone",
   "orientation": "portrait",
   "scope": "/",
