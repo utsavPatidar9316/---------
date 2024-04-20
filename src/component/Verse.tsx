@@ -1,13 +1,22 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { hanumanChalisaGujarati } from "@/utils/data";
 import { useDarkMode } from "@/context/Darkmode";
 import Skeleton from "@mui/material/Skeleton";
 
-const HanumanChalisaDisplay = () => {
+type Verse = {
+  id: number;
+  verse: string;
+};
+
+type VerseProps = {
+  verses: Verse[]; // Change this to an array of Verse type
+  title?: string;
+};
+
+const Verse = (props: VerseProps) => {
   const { darkMode } = useDarkMode();
   const [loading, setLoading] = useState(true);
-
+  const { verses, title } = props;
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
@@ -15,14 +24,13 @@ const HanumanChalisaDisplay = () => {
 
     return () => clearTimeout(timer);
   }, []);
-
   return (
     <div className="container mx-auto px-4 py-8 mb-8 shadow-md rounded-md">
       <h2
         className={`mb-4 text-center rounded-lg my-2 p-4`}
         style={{ fontSize: "x-large", fontWeight: "bolder" }}
       >
-        શ્રી હનુમાન ચાલીસા
+        {title}
       </h2>
       {loading ? (
         <div>
@@ -36,7 +44,7 @@ const HanumanChalisaDisplay = () => {
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 md:gap-4 lg:gap-8">
-          {hanumanChalisaGujarati.map((verse) => (
+          {verses.map((verse) => (
             <div
               key={verse.id}
               className={`p-4 mt-2 rounded-lg ${
@@ -59,4 +67,4 @@ const HanumanChalisaDisplay = () => {
   );
 };
 
-export default HanumanChalisaDisplay;
+export default Verse;

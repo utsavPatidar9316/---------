@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
@@ -9,14 +8,14 @@ import { useDarkMode } from "@/context/Darkmode";
 import Link from "next/link";
 import { theme } from "@/utils/theme";
 import { usePathname } from "next/navigation";
+
 const BottomLayout = () => {
   const { darkMode } = useDarkMode();
   const pathname = usePathname();
-  console.log(pathname);
   const isActive = (path: string) => path === pathname;
+
   return (
     <BottomNavigation
-      showLabels
       sx={{
         position: "fixed",
         bottom: 0,
@@ -29,38 +28,43 @@ const BottomLayout = () => {
         justifyContent: "space-around",
       }}
     >
-      <div>
-        <Link href="/">
-          <BottomNavigationAction
-            label="Home"
-            icon={<HomeIcon />}
-            style={{
-              backgroundColor: isActive("/")
-                ? darkMode
-                  ? "#1e293b"
-                  : theme.lightmodeBg
-                : "inherit",
-            }}
-            sx={{
-              filter: isActive("/")
-                ? ""
-                : darkMode
-                ? "brightness(0) invert(1)"
-                : "",
-            }}
-          />
-        </Link>
+      <Link href="/">
+        <BottomNavigationAction
+          label="Home"
+          icon={<HomeIcon />}
+          showLabel // Use showLabel directly on BottomNavigationAction
+          style={{
+            backgroundColor: isActive("/")
+              ? darkMode
+                ? "#1e293b"
+                : theme.lightmodeBg
+              : "inherit",
+          }}
+          sx={{
+            filter: isActive("/")
+              ? ""
+              : darkMode
+              ? "brightness(0) invert(1)"
+              : "",
+          }}
+        />
+      </Link>
+      <Link href="/">
         <BottomNavigationAction
           label="Settings"
           icon={<SettingsIcon />}
+          showLabel // Use showLabel directly on BottomNavigationAction
           sx={{ filter: darkMode ? "brightness(0) invert(1)" : "" }}
         />
+      </Link>
+      <Link href="/">
         <BottomNavigationAction
           label="Notifications"
           icon={<NotificationsIcon />}
+          showLabel // Use showLabel directly on BottomNavigationAction
           sx={{ filter: darkMode ? "brightness(0) invert(1)" : "" }}
         />
-      </div>
+      </Link>
     </BottomNavigation>
   );
 };
