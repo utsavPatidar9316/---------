@@ -12,7 +12,6 @@ import { usePathname } from "next/navigation";
 const BottomLayout = () => {
   const { darkMode } = useDarkMode();
   const pathname = usePathname();
-  console.log(pathname);
   const isActive = (path: string) => path === pathname;
   return (
     <BottomNavigation
