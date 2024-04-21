@@ -24,3 +24,30 @@ export const sidebarData = [
     path: "/thal",
   },
 ];
+
+export const featuresData = [
+  {
+    id: 1,
+    title: "ચાલીસા",
+    images: "/images/hanuman.png",
+    href: "/chalisa",
+  },
+  {
+    id: 2,
+    title: "મંગલમૂર્તિ",
+    images: "/images/hanuman.png",
+    href: "/mangalmurti",
+  },
+  {
+    id: 3,
+    title: "આરતી",
+    images: "/images/hanuman.png",
+    href: "/aarti",
+  },
+  {
+    id: 4,
+    title: "થાળ",
+    images: "/images/hanuman.png",
+    href: "/thal",
+  },
+];

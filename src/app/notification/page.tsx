@@ -3,12 +3,17 @@ import React from "react";
 
 const Notification = () => {
   return (
-    <Image
-      src="/images/noNotification.jpg"
-      alt="no notification"
-      width={500}
-      height={1000}
-    />
+    <div
+      className="flex items-center justify-center"
+      style={{ minHeight: "85vh" }}
+    >
+      <Image
+        src="/images/noNotification.jpg"
+        alt="no notification"
+        width={1000}
+        height={1000}
+      />
+    </div>
   );
 };
 
