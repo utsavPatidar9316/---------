@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
-import { useDarkMode } from "@/context/Darkmode";
+import { useDarkMode as darkmodeContext } from "@/context/Darkmode";
 import Link from "next/link";
 import Image from "next/image";
 
 const page = () => {
-  const { darkMode } = useDarkMode();
+  const { darkMode } = darkmodeContext();
   return (
     <div className="min-h-screen flex items-center justify-center px-8 pt-4 pb-14">
       <div className="grid grid-cols-2 gap-8 max-w-3xl text-center">
