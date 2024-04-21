@@ -29,7 +29,7 @@ const page = () => {
           />
           <Link
             href="/chalisa"
-            className={`block mt-4  hover:underline ${
+            className={`block mt-4  hover:underline text-xs ${
               darkMode ? "text-blue-200" : "text-blue-600"
             }`}
           >
