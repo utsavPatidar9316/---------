@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { useDarkMode } from "@/context/Darkmode";
 import Link from "next/link";
