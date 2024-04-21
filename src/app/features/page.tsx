@@ -7,7 +7,10 @@ import Image from "next/image";
 const page = () => {
   const { darkMode } = darkmodeContext();
   return (
-    <div className="min-h-screen flex items-center justify-center px-8 pt-4 pb-14">
+    <div
+      className="flex items-center justify-center px-8 pt-4 pb-14"
+      style={{ minHeight: "85vh" }}
+    >
       <div className="grid grid-cols-2 gap-8 max-w-3xl text-center">
         {/* Card 1 */}
         <div

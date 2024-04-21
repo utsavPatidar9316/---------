@@ -11,6 +11,8 @@ import {
   thal6,
   thal7,
   thal8,
+  thal9,
+  thal10,
 } from "@/utils/data";
 
 const Verse = () => {
@@ -31,6 +33,8 @@ const Verse = () => {
     thal6: thal6,
     thal7: thal7,
     thal8: thal8,
+    thal9: thal9,
+    thal10: thal10,
   };
 
   const thalTitles: { [key: string]: string } = {
@@ -42,6 +46,8 @@ const Verse = () => {
     thal6: "વહેલા વહેલા આવો મારા વાલમાં",
     thal7: "ઓ મારા વ્હાલા",
     thal8: "હે મે તો કિઘી છે ઠાકરથાળી પધારો",
+    thal9: "મારે આંગણિયે આવજો, અયોધ્યાના રામ",
+    thal10: "ઝટપટ જમવા પધારો હનુમાનજી",
   };
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -67,6 +73,8 @@ const Verse = () => {
             <option value="thal6">વહેલા વહેલા આવો મારા વાલમાં</option>
             <option value="thal7">ઓ મારા વ્હાલા</option>
             <option value="thal8">હે મે તો કિઘી છે ઠાકરથાળી પધારો</option>
+            <option value="thal9">મારે આંગણિયે આવજો, અયોધ્યાના રામ</option>
+            <option value="thal10">ઝટપટ જમવા પધારો હનુમાનજી</option>
           </select>
         </form>
       </div>

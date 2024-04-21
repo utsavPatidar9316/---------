@@ -13,6 +13,7 @@ import { theme } from "../utils/theme";
 import FirstPageRoundedIcon from "@mui/icons-material/FirstPageRounded";
 import Image from "next/image";
 import Link from "next/link";
+import Avatar from "@mui/material/Avatar";
 
 const drawerWidth = 260;
 
@@ -60,7 +61,7 @@ const Sidebar = ({ open, handleDrawerOpen, isSmallScreen }: props) => {
           કેસરીનંદન ધૂનમંડળ
         </span>
         {isSmallScreen && (
-          <span className="cursor-pointer" style={{ alignSelf: "center" }}>
+          <span style={{ alignSelf: "center", cursor: "pointer" }}>
             <FirstPageRoundedIcon onClick={handleDrawerOpen} />
           </span>
         )}
@@ -92,6 +93,29 @@ const Sidebar = ({ open, handleDrawerOpen, isSmallScreen }: props) => {
           </Link>
         ))}
       </List>
+      <div
+        style={{
+          marginTop: "auto",
+          padding: "1rem",
+          textAlign: "center",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <span className="text-sm text-gray-500 dark:text-gray-400">
+          Developed by{" "}
+          <Link href="https://github.com/utsavPatidar9316/" target="_blank">
+            Utsav{" "}
+          </Link>
+        </span>{" "}
+        <Avatar alt="Utsav Patel" src="/images/file.enc" />
+      </div>
+      <div className="text-center mt-4">
+        <span className="text-xs text-gray-500 dark:text-gray-400">
+          &copy; કેસરીનંદન ધૂનમંડળ 2024
+        </span>
+      </div>
     </Drawer>
   );
 };
