@@ -118,7 +118,9 @@ const Navbar = ({ open, handleDrawerOpen, isSmallScreen }: props) => {
             anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
             variant="dot"
           >
-            <Avatar alt="Jay shree ram" src="/images/hanuman.png" />
+            <span style={{ filter: darkMode ? "brightness(0) invert(1)" : "" }}>
+              <Avatar alt="Jay shree ram" src="/images/hanuman.png" />
+            </span>
           </StyledBadge>
         </div>
       </Toolbar>
