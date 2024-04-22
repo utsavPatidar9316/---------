@@ -42,6 +42,10 @@ const Sidebar = ({ open, handleDrawerOpen, isSmallScreen }: props) => {
       variant={isSmallScreen ? "temporary" : "persistent"}
       anchor="left"
       open={open}
+      onClose={handleDrawerOpen}
+      ModalProps={{
+        keepMounted: true, // Better open performance on mobile.
+      }}
     >
       <div
         style={{
@@ -109,9 +113,13 @@ const Sidebar = ({ open, handleDrawerOpen, isSmallScreen }: props) => {
             Utsav{" "}
           </Link>
         </span>{" "}
-        <Avatar alt="Utsav Patel" src="/images/file.enc" />
+        <Avatar
+          alt="Utsav Patel"
+          src="/images/file.enc"
+          sx={{ marginLeft: "0.5rem" }}
+        />
       </div>
-      <div className="text-center mt-4">
+      <div className="text-center mt-2">
         <span className="text-xs text-gray-500 dark:text-gray-400">
           &copy; કેસરીનંદન ધૂનમંડળ 2024
         </span>
