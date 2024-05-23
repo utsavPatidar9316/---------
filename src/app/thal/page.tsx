@@ -21,6 +21,7 @@ const Verse = () => {
   const [selectedThal, setSelectedThal] = useState("thal1");
 
   const handleThalSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setLoading(true);
     setSelectedThal(event.target.value);
   };
 
