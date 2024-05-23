@@ -55,7 +55,7 @@ const Verse = () => {
     }, 1000);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [selectedThal]);
   return (
     <>
       <div className="flex justify-center text-center">
